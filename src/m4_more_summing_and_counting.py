@@ -12,7 +12,7 @@ in its "in graphics" form:
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
+         Aaron Wilkin, their colleagues, and Micah Fletcher.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import math
@@ -90,7 +90,7 @@ def run_test_sum_from():
     print('       actual (from my code):  ', answer_from_my_code)
 
 # -----------------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   When you have READ the above  run_test_sum_from  function,
 #   asking questions as needed, and you feel that you (mostly, at least)
 #   understand it, and you feel that you understand from the example:
@@ -125,6 +125,14 @@ def sum_from(m, n):
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
 
+    total = m
+
+    for k in range((n + 1) - m):
+
+        total = total + k
+
+
+    return total
 
 def run_test_factorial():
     """ Tests the   factorial   function. """
