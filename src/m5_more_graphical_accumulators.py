@@ -13,6 +13,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+import math
 
 
 # -----------------------------------------------------------------------------
@@ -167,7 +168,7 @@ def run_test_draw_circles_from_rectangle():
     # -------------------------------------------------------------------------
     title = 'Tests 1 and 2 of DRAW_SQUARES_FROM_CIRCLE: '
     title = title + ' 7 little squares from green circle, 4 big squares'
-    window1 = rg.RoseWindow(650, 350, title)
+    window1 = rg.RoseWindow(720, 500, title)
 
     # Test 1:
     rectangle = rg.Rectangle(rg.Point(400, 250), rg.Point(440, 325))
@@ -185,7 +186,7 @@ def run_test_draw_circles_from_rectangle():
     # -------------------------------------------------------------------------
     title = 'Test 3 of DRAW_SQUARES_FROM_CIRCLE: '
     title += ' 20 teeny squares from blue circle!'
-    window2 = rg.RoseWindow(525, 300, title)
+    window2 = rg.RoseWindow(620, 400, title)
 
     # Test 3:
     rectangle = rg.Rectangle(rg.Point(350, 280), rg.Point(375, 330))
@@ -250,7 +251,34 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
 
     rectangle.attach_to(window)
 
-    radius = math.sqrt(rectangle.corner_1.y - rectangle.corner_2.y)
+    radius = rectangle.get_height()/2
+    x = rectangle.get_lower_left_corner().x - radius
+    y = rectangle.get_center().y
+
+
+
+
+    for k in range(m):
+        circle = rg.Circle(rg.Point(x, y), radius)
+
+
+        circle.attach_to(window)
+
+        x = x - (radius * 2)
+
+
+    radius = rectangle.get_width()/2
+    x = rectangle.get_center().x
+    y = rectangle._upper_left_corner.y - radius
+
+    for k in range(n):
+        circle = rg.Circle(rg.Point(x, y), radius)
+
+        circle.attach_to(window)
+
+        y = y - (radius * 2)
+
+    window.render()
 
 def run_test_draw_lines_from_rectangles():
     """ Tests the   draw_lines_from_rectangles  function. """
@@ -342,6 +370,21 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
+
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+
+    p1 = rectangle1.get_center()
+    p2 = rectangle2.get_center()
+    x = p1.x
+    y = p1.y
+    x2 = p2.x
+    y2 = p2.y
+
+    for k in range(n):
+        line = rg.Line(start, end)
+
+        if k/2 % == 0
 
 
 # -----------------------------------------------------------------------------
