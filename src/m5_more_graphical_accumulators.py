@@ -382,9 +382,25 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     y2 = p2.y
 
     for k in range(n):
+
+        start = rg.Point(x, y)
+        end = rg.Point(x2, y2)
+
         line = rg.Line(start, end)
 
-        if k/2 % == 0
+        line.attach_to(window)
+        x = x - rectangle1.get_width()/2
+        y = y + rectangle1.get_height()/2
+        x2 = x2 - rectangle1.get_width()/2
+        y2 = y2 + rectangle1.get_height()/2
+
+
+
+
+    window.render()
+
+
+
 
 
 # -----------------------------------------------------------------------------
